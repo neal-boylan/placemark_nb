@@ -1,32 +1,35 @@
 {
   "users": [
     {
+      "_id": "0d70dcb2-86e9-446f-b4d0-ce9d299b173c",
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "e1828aa2-8feb-4556-93fa-fa139e487f66"
+      "__v": 0
     },
     {
+      "_id": "8ba8cdee-cda7-430b-831d-0ccb0ebb41b7",
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "2680cdfc-c814-480a-a4bb-903edb7fbcaa"
+      "__v": 0
     },
     {
+      "_id": "562aa244-9a0d-4499-b991-c23dcc08ebc4",
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "74002bc7-cf42-46bf-bcc7-ce8bd708b306"
+      "__v": 0
     }
   ],
   "categories": [
     {
       "title": "Diners",
-      "userid": "177a26f6-e0e9-41c8-a4bd-0b8e7007c7ee",
-      "_id": "67812417-f0e9-41bc-b1cd-c219cca60037"
+      "userid": "65ea40047472e9fc9c896a92",
+      "_id": "292bbf94-e825-4e89-a561-d271234c0306"
     }
   ],
   "pois": [
@@ -34,22 +37,22 @@
       "name": "Luke's",
       "latitude": 2,
       "longitude": 2,
-      "_id": "903c530f-af7d-4d3a-a6d6-50f7e5d99e43",
-      "categoryid": "67812417-f0e9-41bc-b1cd-c219cca60037"
+      "_id": "38f3c70a-48e9-4da6-a70d-372487ed74b0",
+      "categoryid": "292bbf94-e825-4e89-a561-d271234c0306"
     },
     {
       "name": "TwoPups",
       "latitude": 3,
       "longitude": 3,
-      "_id": "2312213c-2795-4394-974a-b1b2b9a39ad9",
-      "categoryid": "67812417-f0e9-41bc-b1cd-c219cca60037"
+      "_id": "c581dcde-22b2-4025-84b3-3cd87da56efd",
+      "categoryid": "292bbf94-e825-4e89-a561-d271234c0306"
     },
     {
       "name": "Noshington",
       "latitude": 4,
       "longitude": 4,
-      "_id": "4df7c2de-a6ff-4e0a-bbff-02f449881968",
-      "categoryid": "67812417-f0e9-41bc-b1cd-c219cca60037"
+      "_id": "8564e147-159e-48b7-b830-82a551213fd4",
+      "categoryid": "292bbf94-e825-4e89-a561-d271234c0306"
     }
   ]
 }
