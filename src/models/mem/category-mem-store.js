@@ -20,6 +20,10 @@ export const categoryMemStore = {
     return list;
   },
 
+  async getUserCategories(userid) {
+    return categories.filter((category) => category.userid === userid);
+  },
+
   async deleteCategoryById(id) {
     const index = categories.findIndex((category) => category._id === id);
     categories.splice(index, 1);
