@@ -1,6 +1,6 @@
 {
   "name": "placemark",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Placemark: a Hapi/node application for managing Places of Interest",
   "main": "src/server.js",
   "type": "module",
@@ -8,7 +8,7 @@
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "test": "mocha --ui tdd test/**/*.js -exit",
-    "dev": "nodemon  src/server.js"
+    "dev": "nodemon src/server.js --ignore 'src/models/json/*.json'"
   },
   "author": "",
   "license": "ISC",

@@ -1,10 +1,12 @@
 import { assert } from "chai";
 import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
+import { db } from "../../src/models/db.js";
 import { maggie, testUsers } from "../fixtures.js";
 
 suite("User API tests", () => {
   setup(async () => {
+    db.init("json");
     await placemarkService.deleteAllUsers();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop

@@ -2,6 +2,7 @@ import { EventEmitter } from "events";
 import { assert } from "chai";
 import { placemarkService } from "./placemark-service.js";
 import { assertSubset } from "../test-utils.js";
+import { db } from "../../src/models/db.js";
 import { maggie, gyms, testCategories } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
@@ -10,6 +11,7 @@ suite("Category API tests", () => {
   let user = null;
 
   setup(async () => {
+    db.init("json");
     await placemarkService.deleteAllUsers();
     await placemarkService.deleteAllCategories();
     user = await placemarkService.createUser(maggie);

@@ -1,13 +1,15 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
+import { db } from "../../src/models/db.js";
 import { maggie, gyms, testCategories, testPois, diners, mcdonalds } from "../fixtures.js";
 
-suite("Track API tests", () => {
+suite("Poi API tests", () => {
   let user = null;
   let fastFoodDiners = null;
 
   setup(async () => {
+    db.init("json");
 		await placemarkService.deleteAllCategories();
     await placemarkService.deleteAllUsers();
     await placemarkService.deleteAllPois();

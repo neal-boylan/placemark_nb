@@ -5,32 +5,28 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "9383a245-f8b4-427f-bb65-eb1252982d82"
+      "_id": "e1828aa2-8feb-4556-93fa-fa139e487f66"
     },
     {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "77e0cd7a-3e0a-4932-abfa-baaa56e4505d"
+      "_id": "2680cdfc-c814-480a-a4bb-903edb7fbcaa"
     },
     {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
       "password": "secret",
-      "_id": "c43adc0e-7a3d-48b1-a6f1-8b2c50b08d9e"
+      "_id": "74002bc7-cf42-46bf-bcc7-ce8bd708b306"
     }
   ],
   "categories": [
     {
       "title": "Diners",
-      "_id": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
-    },
-    {
-      "userid": "9383a245-f8b4-427f-bb65-eb1252982d82",
-      "title": "Pubs",
-      "_id": "f5de79dd-7a75-452b-9e39-24b407d101ec"
+      "userid": "177a26f6-e0e9-41c8-a4bd-0b8e7007c7ee",
+      "_id": "67812417-f0e9-41bc-b1cd-c219cca60037"
     }
   ],
   "pois": [
@@ -38,29 +34,22 @@
       "name": "Luke's",
       "latitude": 2,
       "longitude": 2,
-      "_id": "b58f8fe8-77ab-42ff-aea7-de7314ddce92",
-      "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
+      "_id": "903c530f-af7d-4d3a-a6d6-50f7e5d99e43",
+      "categoryid": "67812417-f0e9-41bc-b1cd-c219cca60037"
     },
     {
       "name": "TwoPups",
       "latitude": 3,
       "longitude": 3,
-      "_id": "cc05a88b-169c-493c-972c-aaca17d51a5d",
-      "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
+      "_id": "2312213c-2795-4394-974a-b1b2b9a39ad9",
+      "categoryid": "67812417-f0e9-41bc-b1cd-c219cca60037"
     },
     {
       "name": "Noshington",
       "latitude": 4,
       "longitude": 4,
-      "_id": "bb54cfae-8bc3-48eb-b37d-5980b491f36f",
-      "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
-    },
-    {
-      "name": "Speaker",
-      "latitude": 4,
-      "longitude": 4,
-      "_id": "42bcb826-f1b8-445d-a767-a7b6690c1dfa",
-      "categoryid": "f5de79dd-7a75-452b-9e39-24b407d101ec"
+      "_id": "4df7c2de-a6ff-4e0a-bbff-02f449881968",
+      "categoryid": "67812417-f0e9-41bc-b1cd-c219cca60037"
     }
   ]
 }
