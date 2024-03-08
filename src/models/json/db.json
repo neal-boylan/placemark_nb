@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "firstName": "homer",
+      "lastName": "simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "488ec73f-25af-4616-9353-86902d789f76"
+    },
+    {
+      "firstName": "marge",
+      "lastName": "simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "3a8b7e93-38be-4ee8-bea5-f1c45857355a"
+    }
+  ],
+  "categories": [
+    {
+      "userid": "488ec73f-25af-4616-9353-86902d789f76",
+      "title": "Pubs",
+      "_id": "39d1543c-eec7-486e-964c-6a3af9622e8e"
+    },
+    {
+      "userid": "3a8b7e93-38be-4ee8-bea5-f1c45857355a",
+      "title": "Parks",
+      "_id": "aaf2698d-1583-4e9d-87f6-aa0e40c3b336"
+    }
+  ],
+  "pois": [
+    {
+      "name": "Green",
+      "latitude": 2,
+      "longitude": 2,
+      "_id": "e92a7564-b69b-4f0e-971b-592fc776feb0",
+      "categoryid": "aaf2698d-1583-4e9d-87f6-aa0e40c3b336"
+    },
+    {
+      "name": "Speaker",
+      "latitude": 1,
+      "longitude": 1,
+      "_id": "9fd6a748-cf55-4aef-8a67-36c409761bb9",
+      "categoryid": "39d1543c-eec7-486e-964c-6a3af9622e8e"
+    }
+  ]
+}

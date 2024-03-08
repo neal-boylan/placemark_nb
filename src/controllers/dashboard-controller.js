@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import { CategorySpec } from "../models/joi-schemas.js";
 
 export const dashboardController = {
   index: {
@@ -14,6 +15,15 @@ export const dashboardController = {
   },
 
   addCategory: {
+    validate: {
+      payload: CategorySpec,
+      options: { abortEarly: false },
+      failAction: async function (request, h, error) {
+        const loggedInUser = request.auth.credentials;
+        const userCategories = await db.categoryStore.getUserCategories(loggedInUser._id);
+        return h.view("dashboard-view", { title: "Add Category error", categories: userCategories, errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const newCategory = {
