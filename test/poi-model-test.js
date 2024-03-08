@@ -1,14 +1,14 @@
 import { assert } from "chai";
 import { db } from "../src/models/db.js";
 import { testCategories, testPois, diners, gyms, flyefit, testUsers } from "./fixtures.js";
-// import { assertSubset } from "./test-utils.js";
+import { assertSubset } from "./test-utils.js";
 
 suite("Poi Model tests", () => {
 
   let dinersCat = null;
 
   setup(async () => {
-    db.init();
+    db.init("mongo");
     await db.categoryStore.deleteAllCategories();
     await db.poiStore.deleteAllPois();
     dinersCat = await db.categoryStore.addCategory(diners);
@@ -22,8 +22,8 @@ suite("Poi Model tests", () => {
     const gymsCat = await db.categoryStore.addCategory(gyms);
     const poi = await db.poiStore.addPoi(gymsCat._id, flyefit)
     assert.isNotNull(poi._id);
-		assert.equal(flyefit, poi);
-    // assertSubset (flyefit, poi);
+		// assert.equal(flyefit, poi);
+    assertSubset (flyefit, poi);
   });
 
  test("get multiple pois", async () => {
@@ -43,8 +43,8 @@ suite("Poi Model tests", () => {
     const gymsCat = await db.categoryStore.addCategory(gyms);
     const poi = await db.poiStore.addPoi(gymsCat._id, flyefit)
     const newPoi = await db.poiStore.getPoiById(poi._id);
-		assert.deepEqual(flyefit, newPoi);
-    // assertSubset (flyefit, newPoi);
+		// assert.deepEqual(flyefit, newPoi);
+    assertSubset (flyefit, newPoi);
   });
 
   test("delete One Poi - success", async () => {

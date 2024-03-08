@@ -26,6 +26,11 @@
     {
       "title": "Diners",
       "_id": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
+    },
+    {
+      "userid": "9383a245-f8b4-427f-bb65-eb1252982d82",
+      "title": "Pubs",
+      "_id": "f5de79dd-7a75-452b-9e39-24b407d101ec"
     }
   ],
   "pois": [
@@ -49,6 +54,13 @@
       "longitude": 4,
       "_id": "bb54cfae-8bc3-48eb-b37d-5980b491f36f",
       "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
+    },
+    {
+      "name": "Speaker",
+      "latitude": 4,
+      "longitude": 4,
+      "_id": "42bcb826-f1b8-445d-a767-a7b6690c1dfa",
+      "categoryid": "f5de79dd-7a75-452b-9e39-24b407d101ec"
     }
   ]
 }

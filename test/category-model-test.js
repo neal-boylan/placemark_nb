@@ -1,11 +1,15 @@
+import { EventEmitter } from "events";
 import { assert } from "chai";
+import { assertSubset } from "./test-utils.js";
 import { db } from "../src/models/db.js";
 import { testCategories, gyms } from "./fixtures.js";
+
+EventEmitter.setMaxListeners(25);
 
 suite("Category Model tests", () => {
 
   setup(async () => {
-    db.init();
+    db.init("mongo");
     await db.categoryStore.deleteAllCategories();
     for (let i = 0; i < testCategories.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
@@ -15,7 +19,7 @@ suite("Category Model tests", () => {
 
   test("create a category", async () => {
     const category = await db.categoryStore.addCategory(gyms);
-    assert.equal(gyms, category);
+    assertSubset(gyms, category);
     assert.isDefined(category._id);
   });
 
@@ -30,7 +34,7 @@ suite("Category Model tests", () => {
   test("get a category - success", async () => {
     const category = await db.categoryStore.addCategory(gyms);
     const returnedCategory = await db.categoryStore.getCategoryById(category._id);
-    assert.equal(gyms, category);
+    assertSubset(gyms, category);
   });
 
   test("delete One Category - success", async () => {
