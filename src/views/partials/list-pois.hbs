@@ -1,0 +1,40 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each category.pois}}
+      <tr>
+        <td>
+          {{name}}
+        </td>
+        <td>
+          {{latitude}}
+        </td>
+        <td>
+          {{longitude}}
+        </td>
+        <td>
+          <a href="/poi/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-folder-open"></i>
+            </span>
+          </a>
+        </td>
+        <td>
+          <a href="/category/{{../category._id}}/deletepoi/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-trash"></i>
+            </span>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
