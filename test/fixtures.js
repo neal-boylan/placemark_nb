@@ -1,3 +1,5 @@
+export const serviceUrl = "http://localhost:3000";
+
 export const maggie = {
   firstName: "Maggie",
   lastName: "Simpson",
@@ -38,6 +40,12 @@ export const flyefit = {
   "name": "FlyeFit",
   "latitude": 1,
   "longitude": 1
+};
+
+export const mcdonalds = {
+  "name": "McDonalds",
+  "latitude": 2,
+  "longitude": 2
 };
 
 export const testCategories = [

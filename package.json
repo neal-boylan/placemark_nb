@@ -1,17 +1,19 @@
 {
   "name": "placemark",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Placemark: a Hapi/node application for managing Places of Interest",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "test": "mocha --ui tdd test/**.js -exit"
+    "test": "mocha --ui tdd test/**/*.js -exit",
+    "dev": "nodemon  src/server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^1.6.7",
     "chai": "^5.1.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -21,6 +23,7 @@
     "prettier": "^3.2.5"
   },
   "dependencies": {
+    "@hapi/boom": "^10.0.1",
     "@hapi/cookie": "^12.0.1",
     "@hapi/hapi": "^21.3.3",
     "@hapi/vision": "^7.0.3",
