@@ -4,7 +4,7 @@ let pois = [];
 
 export const poiMemStore = {
   async getAllPois() {
-    return tracks;
+    return pois;
   },
 
   async addPoi(categoryId, poi) {
@@ -19,16 +19,24 @@ export const poiMemStore = {
   },
 
   async getPoiById(id) {
-    return pois.find((poi) => poi._id === id);
+    let foundPoi = pois.find((poi) => poi._id === id);
+    if (!foundPoi) {
+      foundPoi = null;
+    }
+    return foundPoi;
   },
 
   async getCategoryPois(categoryId) {
-    return pois.filter((poi) => poi.categoryid === categoryId);
+    let foundPois = pois.filter((poi) => poi.categoryid === categoryId);
+    if (!foundPois) {
+      foundPois = null;
+    }
+    return foundPois;
   },
 
   async deletePoi(id) {
     const index = pois.findIndex((poi) => poi._id === id);
-    pois.splice(index, 1);
+    if (index !== -1) pois.splice(index, 1);
   },
 
   async deleteAllPois() {

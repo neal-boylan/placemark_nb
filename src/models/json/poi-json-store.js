@@ -18,18 +18,35 @@ export const poiJsonStore = {
 
   async getPoisByCategoryId(id) {
     await db.read();
-    return db.data.pois.filter((poi) => poi.categoryid === id);
+    let foundPois = db.data.pois.filter((poi) => poi.categoryid === id);
+    if (!foundPois) {
+      foundPois = null;
+    }
+    return foundPois;
   },
 
   async getPoiById(id) {
     await db.read();
-    return db.data.pois.find((poi) => poi._id === id);
+    let foundPoi = db.data.pois.find((poi) => poi._id === id);
+    if (!foundPoi) {
+      foundPoi = null;
+    }
+    return foundPoi;
+  },
+
+  async getCategoryPois(categoryId) {
+    await db.read();
+    let foundPois = tracks.filter((poi) => poi.categoryid === categoryId);
+    if (!foundPois) {
+      foundPois = null;
+    }
+    return foundPois;
   },
 
   async deletePoi(id) {
     await db.read();
     const index = db.data.pois.findIndex((poi) => poi._id === id);
-    db.data.pois.splice(index, 1);
+    if (index !== -1) db.data.pois.splice(index, 1);
     await db.write();
   },
 

@@ -1,46 +1,54 @@
 {
   "users": [
     {
-      "firstName": "homer",
-      "lastName": "simpson",
+      "firstName": "Homer",
+      "lastName": "Simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "_id": "488ec73f-25af-4616-9353-86902d789f76"
+      "_id": "9383a245-f8b4-427f-bb65-eb1252982d82"
     },
     {
-      "firstName": "marge",
-      "lastName": "simpson",
+      "firstName": "Marge",
+      "lastName": "Simpson",
       "email": "marge@simpson.com",
       "password": "secret",
-      "_id": "3a8b7e93-38be-4ee8-bea5-f1c45857355a"
+      "_id": "77e0cd7a-3e0a-4932-abfa-baaa56e4505d"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "c43adc0e-7a3d-48b1-a6f1-8b2c50b08d9e"
     }
   ],
   "categories": [
     {
-      "userid": "488ec73f-25af-4616-9353-86902d789f76",
-      "title": "Pubs",
-      "_id": "39d1543c-eec7-486e-964c-6a3af9622e8e"
-    },
-    {
-      "userid": "3a8b7e93-38be-4ee8-bea5-f1c45857355a",
-      "title": "Parks",
-      "_id": "aaf2698d-1583-4e9d-87f6-aa0e40c3b336"
+      "title": "Diners",
+      "_id": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
     }
   ],
   "pois": [
     {
-      "name": "Green",
+      "name": "Luke's",
       "latitude": 2,
       "longitude": 2,
-      "_id": "e92a7564-b69b-4f0e-971b-592fc776feb0",
-      "categoryid": "aaf2698d-1583-4e9d-87f6-aa0e40c3b336"
+      "_id": "b58f8fe8-77ab-42ff-aea7-de7314ddce92",
+      "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
     },
     {
-      "name": "Speaker",
-      "latitude": 1,
-      "longitude": 1,
-      "_id": "9fd6a748-cf55-4aef-8a67-36c409761bb9",
-      "categoryid": "39d1543c-eec7-486e-964c-6a3af9622e8e"
+      "name": "TwoPups",
+      "latitude": 3,
+      "longitude": 3,
+      "_id": "cc05a88b-169c-493c-972c-aaca17d51a5d",
+      "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
+    },
+    {
+      "name": "Noshington",
+      "latitude": 4,
+      "longitude": 4,
+      "_id": "bb54cfae-8bc3-48eb-b37d-5980b491f36f",
+      "categoryid": "58dedc06-27dc-43eb-9e9a-2117d852cb79"
     }
   ]
 }

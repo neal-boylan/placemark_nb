@@ -15,9 +15,14 @@ export const categoryMemStore = {
   },
 
   async getCategoryById(id) {
-    const list = categories.find((category) => category._id === id);
-    list.pois = await poiMemStore.getPoisByCategoryId(list._id);
-    return list;
+    // const list = categories.find((category) => category._id === id);
+    // list.pois = await poiMemStore.getPoisByCategoryId(list._id);
+    // return list;
+
+    const u = categories.find((category) => category._id === id);
+    if (u === undefined) return null;
+    u.pois = await poiMemStore.getPoisByCategoryId(u._id);
+    return u;
   },
 
   async getUserCategories(userid) {
@@ -26,7 +31,7 @@ export const categoryMemStore = {
 
   async deleteCategoryById(id) {
     const index = categories.findIndex((category) => category._id === id);
-    categories.splice(index, 1);
+    if (index !== -1) categories.splice(index, 1);
   },
 
   async deleteAllCategories() {
