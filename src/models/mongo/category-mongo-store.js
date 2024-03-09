@@ -39,5 +39,11 @@ export const categoryMongoStore = {
 
   async deleteAllCategories() {
     await Category.deleteMany({});
-  }
+  },
+
+  async updateCategory(category, updatedCategory) {
+    const categoryDoc = await Category.findOne({ _id: category._id });
+    categoryDoc.title = updatedCategory.title;
+    await categoryDoc.save();
+  },
 };

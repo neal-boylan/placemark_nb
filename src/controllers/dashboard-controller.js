@@ -34,7 +34,28 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+  
+  editCategory: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const category = await db.categoryStore.getCategoryById(request.params.id);
+      const viewData = {
+        title: "Edit Category",
+        category: category,
+      };
+      return h.view("edit-category-view", viewData);
+    },
+  },
 
+  updateCategory: {
+    handler: async function (request, h) {
+      const category = await db.categoryStore.getCategoryById(request.params.id);
+      const updatedCategory = await db.categoryStore.getCategoryById(request.params.name);
+      await db.categoryStore.updateCategory(category, updatedCategory);
+      return h.redirect("/dashboard");
+    },
+  },
+  
   deleteCategory: {
     handler: async function (request, h) {
       const category = await db.categoryStore.getCategoryById(request.params.id);

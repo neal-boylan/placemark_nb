@@ -14,6 +14,10 @@ export const categoryMemStore = {
     return category;
   },
 
+  async updateCategory(category, updatedCategory) {
+    category.name = updatedCategory.name;
+  },
+
   async getCategoryById(id) {
     const u = categories.find((category) => category._id === id);
     if (u === undefined) return null;

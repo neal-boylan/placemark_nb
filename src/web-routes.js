@@ -16,12 +16,16 @@ export const webRoutes = [
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addcategory", config: dashboardController.addCategory },
   { method: "GET", path: "/dashboard/deletecategory/{id}", config: dashboardController.deleteCategory },
+  // { method: "GET", path: "/dashboard/editcategory/{id}", config: dashboardController.editCategory },
+  // { method: "POST", path: "/dashboard/updatecategory/{id}/updateCategory/{}", config: dashboardController.updateCategory },
 
 	{ method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/category/{id}", config: categoryController.index },
   { method: "POST", path: "/category/{id}/addpoi", config: categoryController.addPoi },
   { method: "GET", path: "/category/{id}/deletepoi/{poiid}", config: categoryController.deletePoi },
+  { method: "GET", path: "/category/{id}/editcategory", config: categoryController.editCategory },
+  { method: "POST", path: "/category/{id}/updatecategory", config: categoryController.updateCategory },
 
   { method: "GET", path: "/poi/{id}", config: poiController.index },
   { method: "GET", path: "/poi/{id}/editpoi/{poiid}", config: poiController.index },

@@ -40,4 +40,9 @@ export const categoryJsonStore = {
     db.data.categories = [];
     await db.write();
   },
+
+  async updateCategory(category, updatedCategory) {
+    category.name = updatedCategory.name;
+    await db.write();
+  },
 };
