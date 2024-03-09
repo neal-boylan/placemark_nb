@@ -27,8 +27,13 @@ export const accountsController = {
     },
     handler: async function (request, h) {
       const user = request.payload;
+      const email = db.userStore.getUserByEmail(user.email);
+      if (email) {
+        const message = "Email already has account";
+        return h.view("signup-view", { title: "Email already has account", errors: message });
+      }
       await db.userStore.addUser(user);
-      return h.redirect("/");
+      return h.view("login-view", { title: "Login to Placemark" });
     },
   },
 
@@ -55,7 +60,8 @@ export const accountsController = {
       }
       const user = await db.userStore.getUserByEmail(email);
       if (!user || user.password !== password) {
-        return h.redirect("/");
+        const message = "Incorrect Username/Password";
+        return h.view("login-view", { title: "Incorrect Username/Password", errors: message });
       }
       request.cookieAuth.set({ id: user._id });
       return h.redirect("/dashboard");
