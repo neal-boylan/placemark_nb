@@ -8,7 +8,7 @@ export const UserSpec = {
 };
 
 export const UserCredentialsSpec = {
-  email: Joi.string().email().required(),
+  email: Joi.string().required(),
   password: Joi.string().required(),
 };
 

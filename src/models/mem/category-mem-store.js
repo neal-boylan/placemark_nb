@@ -15,10 +15,6 @@ export const categoryMemStore = {
   },
 
   async getCategoryById(id) {
-    // const list = categories.find((category) => category._id === id);
-    // list.pois = await poiMemStore.getPoisByCategoryId(list._id);
-    // return list;
-
     const u = categories.find((category) => category._id === id);
     if (u === undefined) return null;
     u.pois = await poiMemStore.getPoisByCategoryId(u._id);

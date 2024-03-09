@@ -1,6 +1,7 @@
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
+import { adminController } from "./controllers/admin-controller.js";
 import { categoryController } from "./controllers/category-controller.js";
 import { poiController } from "./controllers/poi-controller.js";
 
@@ -20,8 +21,15 @@ export const webRoutes = [
 
   { method: "GET", path: "/category/{id}", config: categoryController.index },
   { method: "POST", path: "/category/{id}/addpoi", config: categoryController.addPoi },
+  { method: "GET", path: "/category/{id}/deletepoi/{poiid}", config: categoryController.deletePoi },
 
   { method: "GET", path: "/poi/{id}", config: poiController.index },
+  { method: "GET", path: "/poi/{id}/editpoi/{poiid}", config: poiController.index },
+  { method: "POST", path: "/poi/{id}/updatepoi/{poiid}", config: poiController.update },
 
-  { method: "GET", path: "/category/{id}/deletepoi/{poiid}", config: categoryController.deletePoi },
+  { method: "GET", path: "/admin", config: adminController.index },
+  { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteOneUser },
+  { method: "GET", path: "/admin/deleteusers", config: adminController.deleteUsers },
+  { method: "GET", path: "/admin/deletecategories", config: adminController.deleteCategories },
+  { method: "GET", path: "/admin/deletepois", config: adminController.deletePois },
 ];
