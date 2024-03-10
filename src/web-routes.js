@@ -12,12 +12,13 @@ export const webRoutes = [
   { method: "GET", path: "/logout", config: accountsController.logout },
   { method: "POST", path: "/register", config: accountsController.signup },
   { method: "POST", path: "/authenticate", config: accountsController.login },
+  { method: "POST", path: "/deleteuser/{id}", config: accountsController.deleteUser },
+  { method: "GET", path: "/edituser/{id}", config: accountsController.editUser },
+  { method: "POST", path: "/updateuser/{id}", config: accountsController.updateUser },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addcategory", config: dashboardController.addCategory },
   { method: "GET", path: "/dashboard/deletecategory/{id}", config: dashboardController.deleteCategory },
-  // { method: "GET", path: "/dashboard/editcategory/{id}", config: dashboardController.editCategory },
-  // { method: "POST", path: "/dashboard/updatecategory/{id}/updateCategory/{}", config: dashboardController.updateCategory },
 
 	{ method: "GET", path: "/about", config: aboutController.index },
 

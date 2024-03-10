@@ -28,7 +28,10 @@ export const accountsController = {
     handler: async function (request, h) {
       const user = request.payload;
       const email = db.userStore.getUserByEmail(user.email);
-      if (email) {
+      console.log(`email: ${  email}`);
+      console.log(`typeof email: ${  typeof email}`);
+
+      if (typeof email === "string") {
         const message = "Email already has account";
         return h.view("signup-view", { title: "Email already has account", errors: message });
       }
@@ -81,5 +84,47 @@ export const accountsController = {
       return { isValid: false };
     }
     return { isValid: true, credentials: user };
+  },
+  
+  editUser: {
+    handler: async function (request, h) {
+      const user = await db.userStore.getUserById(request.params.id);
+      const viewData = {
+        title: "Edit User",
+        user: user,
+      };
+      return h.view("account-view", viewData);
+    },
+  },
+
+  updateUser: {
+    auth: false,
+    validate: {
+      payload: UserSpec,
+      options: { abortEarly: false },
+      failAction: async function (request, h, error) {
+        const user = await db.userStore.getUserById(request.params.id);
+        return h.view("account-view", { title: "Account Update error", user: user, errors: error.details }).takeover().code(400);
+      },
+    },
+    handler: async function (request, h) {
+      const user = await db.userStore.getUserById(request.params.id);
+      const newUser = {
+        firstName: request.payload.firstName,
+        lastName: request.payload.lastName,
+        email: request.payload.email,
+        password: request.payload.password,
+      };
+      await db.userStore.updateUser(user, newUser);
+      return h.redirect("/dashboard");
+    },
+  },
+
+  deleteUser: {
+    handler: async function (request, h) {
+      const user = await db.userStore.getUserById(request.params.id);
+      await db.userStore.deleteUserById(user._id);
+      return h.redirect("/admin");
+    },
   },
 };

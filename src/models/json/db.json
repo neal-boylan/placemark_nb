@@ -2,10 +2,10 @@
   "users": [
     {
       "_id": "0d70dcb2-86e9-446f-b4d0-ce9d299b173c",
-      "firstName": "Homer",
-      "lastName": "Simpson",
-      "email": "homer@simpson.com",
-      "password": "secret",
+      "firstName": "Homer2",
+      "lastName": "Simpson2",
+      "email": "homer2@simpson.com",
+      "password": "pass",
       "__v": 0
     },
     {

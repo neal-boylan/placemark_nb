@@ -9,6 +9,7 @@ export const dashboardController = {
       const viewData = {
         title: "Category Dashboard",
         categories: categories,
+        user: loggedInUser,
       };
       return h.view("dashboard-view", viewData);
     },
