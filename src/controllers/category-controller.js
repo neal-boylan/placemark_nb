@@ -4,10 +4,12 @@ import { PoiSpec, CategorySpec } from "../models/joi-schemas.js";
 export const categoryController = {
   index: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
       const category = await db.categoryStore.getCategoryById(request.params.id);
       const viewData = {
         title: "Category",
         category: category,
+        user: loggedInUser,
       };
       return h.view("category-view", viewData);
     },
@@ -49,6 +51,7 @@ export const categoryController = {
       const viewData = {
         title: "Edit Category",
         category: category,
+        user: loggedInUser,
       };
       return h.view("edit-category-view", viewData);
     },

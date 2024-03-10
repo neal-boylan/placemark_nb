@@ -17,12 +17,14 @@ export const poiController = {
 
   editPoi: {
     handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
       const category = await db.categoryStore.getCategoryById(request.params.id);
       const poi = await db.poiStore.getPoiById(request.params.poiid);
       const viewData = {
         title: "Edit PoI",
         category: category,
         poi: poi,
+        user: loggedInUser,
       };
       return h.view("edit-poi-view", viewData);
     },
