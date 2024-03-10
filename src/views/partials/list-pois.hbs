@@ -6,6 +6,7 @@
       <th>Longitude</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -21,9 +22,16 @@
           {{longitude}}
         </td>
         <td>
-          <a href="/poi/{{_id}}" class="button">
+          <a href="/poi/{{../category._id}}/viewpoi/{{_id}}" class="button">
             <span class="icon is-small">
               <i class="fas fa-folder-open"></i>
+            </span>
+          </a>
+        </td>
+        <td>
+          <a href="/poi/{{../category._id}}/editpoi/{{_id}}" class="button">
+            <span class="icon is-small">
+              <i class="fas fa-edit"></i>
             </span>
           </a>
         </td>

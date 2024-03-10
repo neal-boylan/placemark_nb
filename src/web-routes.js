@@ -27,9 +27,9 @@ export const webRoutes = [
   { method: "GET", path: "/category/{id}/editcategory", config: categoryController.editCategory },
   { method: "POST", path: "/category/{id}/updatecategory", config: categoryController.updateCategory },
 
-  { method: "GET", path: "/poi/{id}", config: poiController.index },
-  { method: "GET", path: "/poi/{id}/editpoi/{poiid}", config: poiController.index },
-  { method: "POST", path: "/poi/{id}/updatepoi/{poiid}", config: poiController.update },
+  { method: "GET", path: "/poi/{id}/viewpoi/{poiid}", config: poiController.index },
+  { method: "GET", path: "/poi/{id}/editpoi/{poiid}", config: poiController.editPoi },
+  { method: "POST", path: "/poi/{id}/updatepoi/{poiid}", config: poiController.updatePoi },
 
   { method: "GET", path: "/admin", config: adminController.index },
   { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteOneUser },

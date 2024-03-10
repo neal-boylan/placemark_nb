@@ -4,21 +4,38 @@ import { PoiSpec } from "../models/joi-schemas.js";
 export const poiController = {
   index: {
     handler: async function (request, h) {
-      const poi = await db.poiStore.getPoiById(request.params.id);
+      const category = await db.categoryStore.getCategoryById(request.params.id);
+      const poi = await db.poiStore.getPoiById(request.params.poiid);
       const viewData = {
-        name: "Poi",
+        title: poi.name,
+        category: category,
         poi: poi,
       };
       return h.view("poi-view", viewData);
     },
   },
 
-  update: {
+  editPoi: {
+    handler: async function (request, h) {
+      const category = await db.categoryStore.getCategoryById(request.params.id);
+      const poi = await db.poiStore.getPoiById(request.params.poiid);
+      const viewData = {
+        title: "Edit PoI",
+        category: category,
+        poi: poi,
+      };
+      return h.view("edit-poi-view", viewData);
+    },
+  },
+
+  updatePoi: {
     validate: {
       payload: PoiSpec,
       options: { abortEarly: false },
-      failAction: function (request, h, error) {
-        return h.view("poi-view", { title: "Edit poi error", errors: error.details }).takeover().code(400);
+      failAction: async function (request, h, error) {
+      const category = await db.categoryStore.getCategoryById(request.params.id);
+      const poi = await db.poiStore.getPoiById(request.params.poiid);
+      return h.view("poi-view", { title: "Edit poi error", category: category, poi: poi, errors: error.details }).takeover().code(400);
       },
     },
     handler: async function (request, h) {

@@ -1,0 +1,17 @@
+<form class="box" action="/poi/{{poi._id}}/updatepoi" method="POST">
+  <label>Enter PoI Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder={{poi.name}} name="name">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder={{poi.latitude}} name="latitude">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder={{poi.longitude}} name="longitude">
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Update</button>
+</form>
